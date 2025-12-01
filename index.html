@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Fácil - Modernize seu Jogo de Bingo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-accent {
+            color: #fbbf24;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0 20px;
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.6);
+            background: #fcd34d;
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.3s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.5s; }
+        .feature-card:nth-child(4) { animation-delay: 0.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #fbbf24;
+        }
+
+        .feature-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .platform-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .platform-info p {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+
+        .ios-note {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .future-note {
+            opacity: 0.85;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                Bingo <span class="logo-accent">Fácil</span>
+            </div>
+            <p class="tagline">Transforme suas cartelas físicas em digitais!</p>
+        </header>
+
+        <div class="hero">
+            <h1>Chega de milho e feijão! 🎉</h1>
+            <p>Digitalize suas cartelas de bingo com a câmera do celular e jogue de forma moderna, prática e organizada.</p>
+            <p>Perfeito para eventos, festas e encontros de igreja!</p>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.christiankoziel.bingofacil" class="cta-button">
+                Baixar Agora na Play Store
+            </a>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>Digitalize com a Câmera</h3>
+                <p>Tire foto das suas cartelas físicas e transforme-as em cartelas virtuais em segundos!</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Acompanhamento em Tempo Real</h3>
+                <p>Digite os números sorteados e veja todas as suas cartelas sendo marcadas automaticamente.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Múltiplos Tipos de Vitória</h3>
+                <p>Configure linha, coluna, X, 4 cantos ou cartela cheia. Receba notificação quando ganhar!</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Histórico Completo</h3>
+                <p>Revise todas as partidas: números sorteados, cartelas vencedoras e duração das rodadas.</p>
+            </div>
+        </div>
+
+        <div class="platform-info">
+            <p class="ios-note">📱 Versão para iOS em desenvolvimento</p>
+            <p class="future-note">Em breve: jogue online com amigos de todo o Brasil com prêmios reais!</p>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="https://play.google.com/store/apps/details?id=com.christiankoziel.bingofacil" class="cta-button">
+                Instalar Bingo Fácil Grátis
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2024 Bingo Fácil - Modernize seu jogo de bingo</p>
+        </footer>
+    </div>
+</body>
+</html>
